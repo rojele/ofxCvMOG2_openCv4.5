@@ -14,6 +14,7 @@ public:
     ofxCvMOG2();
     void reset();
     void updateParams();
+    void updateThreshold();
     void enableShadowDetection(bool b);
     void setNumMixtures(int n);
     inline void enableShadowMask(bool b){bSMask=b;}
@@ -26,6 +27,8 @@ public:
     inline bool isComputingShadowMask(){return bSMask;}
     inline bool isComputingShadowLessMask(){return bSLMask;}
     inline int getNumMixtures(){return nMixtures;}
+    int threshold = 254;
+
 protected:
     inline void destroyMog2(){mog2.release();}
     
